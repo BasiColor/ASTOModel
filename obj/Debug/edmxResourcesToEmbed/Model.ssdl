@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ASTOGelatoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Banner_This">
+    <Key>
+      <PropertyRef Name="BN_ID" />
+    </Key>
+    <Property Name="BN_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Eanble" Type="bit" />
+  </EntityType>
+  <EntityType Name="Blog_This">
+    <Key>
+      <PropertyRef Name="BL_ID" />
+    </Key>
+    <Property Name="BL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BL_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Context" Type="nvarchar(max)" />
+    <Property Name="Attachment" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Log_This">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogContent" Type="nvarchar(max)" />
+    <Property Name="Datetime" Type="datetime" />
+    <Property Name="Controller" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="News_This">
+    <Key>
+      <PropertyRef Name="NT_ID" />
+    </Key>
+    <Property Name="NT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Context" Type="nvarchar(max)" />
+    <Property Name="Datetime" Type="datetime" />
+    <Property Name="Attachment" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order_Details">
+    <Key>
+      <PropertyRef Name="OT_ID" />
+      <PropertyRef Name="PF_ID" />
+    </Key>
+    <Property Name="OT_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PF_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="PR_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Format" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order_This">
+    <Key>
+      <PropertyRef Name="OT_ID" />
+    </Key>
+    <Property Name="OT_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Guest" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Mail" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar" MaxLength="10" />
+    <Property Name="District" Type="nvarchar" MaxLength="10" />
+    <Property Name="PostaCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="InvoiceTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniformNumbers" Type="nvarchar" MaxLength="10" />
+    <Property Name="PayMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="Datetime" Type="datetime" />
+    <Property Name="Preferential" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotlePrice" Type="money" />
+    <Property Name="LastNumber" Type="nvarchar" MaxLength="5" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingFee" Type="money" />
+    <Property Name="TrackingNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="PC_ID" />
+    </Key>
+    <Property Name="PC_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PC_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Introduction" Type="nvarchar(max)" />
+    <Property Name="Enable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product_Format">
+    <Key>
+      <PropertyRef Name="PF_ID" />
+    </Key>
+    <Property Name="PF_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PT_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Format" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="money" />
+    <Property Name="MPrice" Type="money" />
+    <Property Name="BeOrder" Type="bit" />
+    <Property Name="Enable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product_This">
+    <Key>
+      <PropertyRef Name="PT_ID" />
+    </Key>
+    <Property Name="PT_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PT_Index" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PT_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Introduction" Type="nvarchar(max)" />
+    <Property Name="Story" Type="nvarchar(max)" />
+    <Property Name="InStore" Type="bit" />
+    <Property Name="Enable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product_This_Category">
+    <Key>
+      <PropertyRef Name="PC_ID" />
+      <PropertyRef Name="PT_ID" />
+    </Key>
+    <Property Name="PC_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PT_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store_Photo">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+      <PropertyRef Name="Pic_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="int" Nullable="false" />
+    <Property Name="Pic_ID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Pic_Type" Type="nvarchar" MaxLength="10" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Store_This">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ST_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Introduct" Type="ntext" />
+  </EntityType>
+  <Association Name="FK_Order_Details_Order_This">
+    <End Role="Order_This" Type="Self.Order_This" Multiplicity="1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_This">
+        <PropertyRef Name="OT_ID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="OT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Format_Product_This">
+    <End Role="Product_This" Type="Self.Product_This" Multiplicity="0..1" />
+    <End Role="Product_Format" Type="Self.Product_Format" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_This">
+        <PropertyRef Name="PT_ID" />
+      </Principal>
+      <Dependent Role="Product_Format">
+        <PropertyRef Name="PT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_This_Category_Product_Category">
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="1" />
+    <End Role="Product_This_Category" Type="Self.Product_This_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Category">
+        <PropertyRef Name="PC_ID" />
+      </Principal>
+      <Dependent Role="Product_This_Category">
+        <PropertyRef Name="PC_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_This_Category_Product_This">
+    <End Role="Product_This" Type="Self.Product_This" Multiplicity="1" />
+    <End Role="Product_This_Category" Type="Self.Product_This_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_This">
+        <PropertyRef Name="PT_ID" />
+      </Principal>
+      <Dependent Role="Product_This_Category">
+        <PropertyRef Name="PT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Photo_Store_This">
+    <End Role="Store_This" Type="Self.Store_This" Multiplicity="1" />
+    <End Role="Store_Photo" Type="Self.Store_Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_This">
+        <PropertyRef Name="ST_ID" />
+      </Principal>
+      <Dependent Role="Store_Photo">
+        <PropertyRef Name="ST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ASTOGelatoModelStoreContainer">
+    <EntitySet Name="Banner_This" EntityType="Self.Banner_This" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog_This" EntityType="Self.Blog_This" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log_This" EntityType="Self.Log_This" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_This" EntityType="Self.News_This" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_Details" EntityType="Self.Order_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_This" EntityType="Self.Order_This" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Category" EntityType="Self.Product_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Format" EntityType="Self.Product_Format" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_This" EntityType="Self.Product_This" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_This_Category" EntityType="Self.Product_This_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store_Photo" EntityType="Self.Store_Photo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store_This" EntityType="Self.Store_This" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Order_Details_Order_This" Association="Self.FK_Order_Details_Order_This">
+      <End Role="Order_This" EntitySet="Order_This" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Format_Product_This" Association="Self.FK_Product_Format_Product_This">
+      <End Role="Product_This" EntitySet="Product_This" />
+      <End Role="Product_Format" EntitySet="Product_Format" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_This_Category_Product_Category" Association="Self.FK_Product_This_Category_Product_Category">
+      <End Role="Product_Category" EntitySet="Product_Category" />
+      <End Role="Product_This_Category" EntitySet="Product_This_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_This_Category_Product_This" Association="Self.FK_Product_This_Category_Product_This">
+      <End Role="Product_This" EntitySet="Product_This" />
+      <End Role="Product_This_Category" EntitySet="Product_This_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Photo_Store_This" Association="Self.FK_Store_Photo_Store_This">
+      <End Role="Store_This" EntitySet="Store_This" />
+      <End Role="Store_Photo" EntitySet="Store_Photo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

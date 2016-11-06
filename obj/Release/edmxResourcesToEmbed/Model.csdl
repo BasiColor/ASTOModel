@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ASTOGelatoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ASTOGelatoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Banner_This" EntityType="ASTOGelatoModel.Banner_This" />
+    <EntitySet Name="Blog_This" EntityType="ASTOGelatoModel.Blog_This" />
+    <EntitySet Name="News_This" EntityType="ASTOGelatoModel.News_This" />
+    <EntitySet Name="Product_Category" EntityType="ASTOGelatoModel.Product_Category" />
+    <EntitySet Name="Product_Format" EntityType="ASTOGelatoModel.Product_Format" />
+    <EntitySet Name="Product_This" EntityType="ASTOGelatoModel.Product_This" />
+    <EntitySet Name="Store_Photo" EntityType="ASTOGelatoModel.Store_Photo" />
+    <EntitySet Name="Store_This" EntityType="ASTOGelatoModel.Store_This" />
+    <AssociationSet Name="FK_Product_Format_Product_This" Association="ASTOGelatoModel.FK_Product_Format_Product_This">
+      <End Role="Product_This" EntitySet="Product_This" />
+      <End Role="Product_Format" EntitySet="Product_Format" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Photo_Store_This" Association="ASTOGelatoModel.FK_Store_Photo_Store_This">
+      <End Role="Store_This" EntitySet="Store_This" />
+      <End Role="Store_Photo" EntitySet="Store_Photo" />
+    </AssociationSet>
+    <AssociationSet Name="Product_This_Category" Association="ASTOGelatoModel.Product_This_Category">
+      <End Role="Product_Category" EntitySet="Product_Category" />
+      <End Role="Product_This" EntitySet="Product_This" />
+    </AssociationSet>
+    <EntitySet Name="Log_This" EntityType="ASTOGelatoModel.Log_This" />
+    <EntitySet Name="Order_Details" EntityType="ASTOGelatoModel.Order_Details" />
+    <EntitySet Name="Order_This" EntityType="ASTOGelatoModel.Order_This" />
+    <AssociationSet Name="FK_Order_Details_Order_This" Association="ASTOGelatoModel.FK_Order_Details_Order_This">
+      <End Role="Order_This" EntitySet="Order_This" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Banner_This">
+    <Key>
+      <PropertyRef Name="BN_ID" />
+    </Key>
+    <Property Name="BN_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Eanble" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Blog_This">
+    <Key>
+      <PropertyRef Name="BL_ID" />
+    </Key>
+    <Property Name="BL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BL_Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attachment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="News_This">
+    <Key>
+      <PropertyRef Name="NT_ID" />
+    </Key>
+    <Property Name="NT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="Attachment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="PC_ID" />
+    </Key>
+    <Property Name="PC_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PC_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Enable" Type="Boolean" />
+    <NavigationProperty Name="Product_This" Relationship="ASTOGelatoModel.Product_This_Category" FromRole="Product_Category" ToRole="Product_This" />
+  </EntityType>
+  <EntityType Name="Product_Format">
+    <Key>
+      <PropertyRef Name="PF_ID" />
+    </Key>
+    <Property Name="PF_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Format" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BeOrder" Type="Boolean" />
+    <Property Name="Enable" Type="Boolean" />
+    <NavigationProperty Name="Product_This" Relationship="ASTOGelatoModel.FK_Product_Format_Product_This" FromRole="Product_Format" ToRole="Product_This" />
+  </EntityType>
+  <EntityType Name="Product_This">
+    <Key>
+      <PropertyRef Name="PT_ID" />
+    </Key>
+    <Property Name="PT_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PT_Index" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PT_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Story" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Enable" Type="Boolean" />
+    <NavigationProperty Name="Product_Format" Relationship="ASTOGelatoModel.FK_Product_Format_Product_This" FromRole="Product_This" ToRole="Product_Format" />
+    <NavigationProperty Name="Product_Category" Relationship="ASTOGelatoModel.Product_This_Category" FromRole="Product_This" ToRole="Product_Category" />
+    <Property Name="InStore" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Store_Photo">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+      <PropertyRef Name="Pic_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="Pic_ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pic_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Store_This" Relationship="ASTOGelatoModel.FK_Store_Photo_Store_This" FromRole="Store_Photo" ToRole="Store_This" />
+  </EntityType>
+  <EntityType Name="Store_This">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ST_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Introduct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Store_Photo" Relationship="ASTOGelatoModel.FK_Store_Photo_Store_This" FromRole="Store_This" ToRole="Store_Photo" />
+  </EntityType>
+  <Association Name="FK_Product_Format_Product_This">
+    <End Type="ASTOGelatoModel.Product_This" Role="Product_This" Multiplicity="0..1" />
+    <End Type="ASTOGelatoModel.Product_Format" Role="Product_Format" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_This">
+        <PropertyRef Name="PT_ID" />
+      </Principal>
+      <Dependent Role="Product_Format">
+        <PropertyRef Name="PT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Photo_Store_This">
+    <End Type="ASTOGelatoModel.Store_This" Role="Store_This" Multiplicity="1" />
+    <End Type="ASTOGelatoModel.Store_Photo" Role="Store_Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_This">
+        <PropertyRef Name="ST_ID" />
+      </Principal>
+      <Dependent Role="Store_Photo">
+        <PropertyRef Name="ST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product_This_Category">
+    <End Type="ASTOGelatoModel.Product_Category" Role="Product_Category" Multiplicity="*" />
+    <End Type="ASTOGelatoModel.Product_This" Role="Product_This" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Log_This">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="Controller" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order_Details">
+    <Key>
+      <PropertyRef Name="OT_ID" />
+      <PropertyRef Name="PF_ID" />
+    </Key>
+    <Property Name="OT_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PF_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PR_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Format" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order_This" Relationship="ASTOGelatoModel.FK_Order_Details_Order_This" FromRole="Order_Details" ToRole="Order_This" />
+  </EntityType>
+  <EntityType Name="Order_This">
+    <Key>
+      <PropertyRef Name="OT_ID" />
+    </Key>
+    <Property Name="OT_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Guest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PostaCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniformNumbers" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PayMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="Preferential" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotlePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LastNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TrackingNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order_Details" Relationship="ASTOGelatoModel.FK_Order_Details_Order_This" FromRole="Order_This" ToRole="Order_Details" />
+  </EntityType>
+  <Association Name="FK_Order_Details_Order_This">
+    <End Type="ASTOGelatoModel.Order_This" Role="Order_This" Multiplicity="1" />
+    <End Type="ASTOGelatoModel.Order_Details" Role="Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_This">
+        <PropertyRef Name="OT_ID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="OT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

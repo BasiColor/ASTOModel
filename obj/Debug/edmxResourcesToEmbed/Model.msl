@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ASTOGelatoModelStoreContainer" CdmEntityContainer="ASTOGelatoEntities">
+    <EntitySetMapping Name="Banner_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Banner_This">
+        <MappingFragment StoreEntitySet="Banner_This">
+          <ScalarProperty Name="Eanble" ColumnName="Eanble" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="BN_ID" ColumnName="BN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Blog_This">
+        <MappingFragment StoreEntitySet="Blog_This">
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="BL_Title" ColumnName="BL_Title" />
+          <ScalarProperty Name="BL_ID" ColumnName="BL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.News_This">
+        <MappingFragment StoreEntitySet="News_This">
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="NT_ID" ColumnName="NT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Category">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Product_Category">
+        <MappingFragment StoreEntitySet="Product_Category">
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="PC_Name" ColumnName="PC_Name" />
+          <ScalarProperty Name="PC_ID" ColumnName="PC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Format">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Product_Format">
+        <MappingFragment StoreEntitySet="Product_Format">
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="BeOrder" ColumnName="BeOrder" />
+          <ScalarProperty Name="MPrice" ColumnName="MPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Format" ColumnName="Format" />
+          <ScalarProperty Name="PT_ID" ColumnName="PT_ID" />
+          <ScalarProperty Name="PF_ID" ColumnName="PF_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Product_This">
+        <MappingFragment StoreEntitySet="Product_This">
+          <ScalarProperty Name="InStore" ColumnName="InStore" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="Story" ColumnName="Story" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="PT_Name" ColumnName="PT_Name" />
+          <ScalarProperty Name="PT_Index" ColumnName="PT_Index" />
+          <ScalarProperty Name="PT_ID" ColumnName="PT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store_Photo">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Store_Photo">
+        <MappingFragment StoreEntitySet="Store_Photo">
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Pic_Type" ColumnName="Pic_Type" />
+          <ScalarProperty Name="Pic_ID" ColumnName="Pic_ID" />
+          <ScalarProperty Name="ST_ID" ColumnName="ST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Store_This">
+        <MappingFragment StoreEntitySet="Store_This">
+          <ScalarProperty Name="Introduct" ColumnName="Introduct" />
+          <ScalarProperty Name="ST_Name" ColumnName="ST_Name" />
+          <ScalarProperty Name="ST_ID" ColumnName="ST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Product_This_Category" TypeName="ASTOGelatoModel.Product_This_Category" StoreEntitySet="Product_This_Category">
+      <EndProperty Name="Product_This">
+        <ScalarProperty Name="PT_ID" ColumnName="PT_ID" />
+      </EndProperty>
+      <EndProperty Name="Product_Category">
+        <ScalarProperty Name="PC_ID" ColumnName="PC_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Log_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Log_This">
+        <MappingFragment StoreEntitySet="Log_This">
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="LogContent" ColumnName="LogContent" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Order_Details">
+        <MappingFragment StoreEntitySet="Order_Details">
+          <ScalarProperty Name="Format" ColumnName="Format" />
+          <ScalarProperty Name="PR_Name" ColumnName="PR_Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PF_ID" ColumnName="PF_ID" />
+          <ScalarProperty Name="OT_ID" ColumnName="OT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_This">
+      <EntityTypeMapping TypeName="ASTOGelatoModel.Order_This">
+        <MappingFragment StoreEntitySet="Order_This">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ShippingStatus" ColumnName="ShippingStatus" />
+          <ScalarProperty Name="TrackingNumber" ColumnName="TrackingNumber" />
+          <ScalarProperty Name="ShippingFee" ColumnName="ShippingFee" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LastNumber" ColumnName="LastNumber" />
+          <ScalarProperty Name="TotlePrice" ColumnName="TotlePrice" />
+          <ScalarProperty Name="Preferential" ColumnName="Preferential" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="PayMethod" ColumnName="PayMethod" />
+          <ScalarProperty Name="UniformNumbers" ColumnName="UniformNumbers" />
+          <ScalarProperty Name="InvoiceTitle" ColumnName="InvoiceTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PostaCode" ColumnName="PostaCode" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Guest" ColumnName="Guest" />
+          <ScalarProperty Name="OT_ID" ColumnName="OT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

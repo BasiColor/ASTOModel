@@ -1,0 +1,24 @@
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\Asto.Models.dll.config
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\Asto.Models.dll
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\Asto.Models.pdb
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\EntityFramework.dll
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\EntityFramework.SqlServer.dll
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\EntityFramework.xml
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\EntityFramework.SqlServer.xml
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\zh-Hant\EntityFramework.resources.dll
+D:\工作區\寫程式的啦\Asto\Asto.Models\bin\Release\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\工作區\寫程式的啦\Asto\Asto.Models\obj\Release\Asto.Models.dll
+D:\工作區\寫程式的啦\Asto\Asto.Models\obj\Release\Asto.Models.pdb
+D:\工作區\寫程式的啦\Asto\Asto.Models\obj\Release\Asto.Models.csprojResolveAssemblyReference.cache
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\Asto.Models.dll.config
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\Asto.Models.dll
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\Asto.Models.pdb
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\EntityFramework.dll
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\EntityFramework.SqlServer.dll
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\EntityFramework.xml
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\EntityFramework.SqlServer.xml
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\zh-Hant\EntityFramework.resources.dll
+G:\web\ASTO ioc\Asto\Asto.Models\bin\Release\zh-Hant\EntityFramework.SqlServer.resources.dll
+G:\web\ASTO ioc\Asto\Asto.Models\obj\Release\Asto.Models.csprojResolveAssemblyReference.cache
+G:\web\ASTO ioc\Asto\Asto.Models\obj\Release\Asto.Models.dll
+G:\web\ASTO ioc\Asto\Asto.Models\obj\Release\Asto.Models.pdb
