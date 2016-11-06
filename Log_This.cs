@@ -17,6 +17,7 @@ namespace Asto.Models
         public int LogID { get; set; }
         public string LogContent { get; set; }
         public Nullable<System.DateTime> Datetime { get; set; }
-        public string Controller { get; set; }
+        public string Controller { get; set;  }
+        //public string test {get;set;}
     }
 }
